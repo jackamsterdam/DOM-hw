@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ex3.css">
+    <title>Ex 3</title>
+</head>
+
+<body>
+    <p>Write a program that displays a button that says change bgd color. The moment I press on it the background color of the body will change. You must use a class that is defined and the moment that I will press on the button it will be added to body</p>
+
+    <button type="button" id="btn" class="btn" onclick="changeColor()">Change background color</button>
+
+
+
+
+    <script>
+        function changeColor() {
+            // let button = document.querySelector('#btn')
+            // button.classList.add('selected')
+            // other option:
+            // document.body.style.backgroundColor = 'green'
+            let body = document.querySelector('body')
+            body.classList.add('selected')
+        }
+    </script>
+    <!-- <script src="ex3.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+.borderMeExists {
+    border: 3px solid green;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+.borderMeDoesNotExist {
+    border: 3px solid red;
+    width: fit-content;
+    margin-top: 10px;
+}

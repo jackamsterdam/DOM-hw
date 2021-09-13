@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ex6.css">
+    <title>Ex6</title>
+</head>
+
+<body>
+    <p>Write a program that displays an input box with type text. and a button that says check availability</p>
+    <p>In this input box the user will enter some email and the moment I press the button- the email will be checked if it appears in the array. </p>
+    <p>If it appears: This email exists in the system</p>
+    <p>If the email doesnt exist: Email is not in the system</p>
+
+    <!-- <label for=""></label> dont need label?????? we have a button -->
+    <input type="text" name="email" id="email" placeholder="enter email" class="email">
+
+    <button type="button" class="btn" id="btn" onclick="checkIt()">Check Availability</button>
+
+
+    <div id="injectResponse"></div>
+
+
+
+
+
+    <script>
+        let emailList = ['jb.haim.rubin@gmail.com', 'yossi@gmail.com', 'avi@gmail.com']
+
+
+        function checkIt() {
+            let input = document.querySelector('input')
+            let emailEntered = input.value
+            console.log(emailEntered)
+
+            for (let val of emailList) {
+                console.log('emailList', emailList)
+                console.log('val', val)
+                console.log('emailList[val]', emailList[val])
+                console.log('emailEntered', emailEntered)
+                if (val === emailEntered) {
+                    let exists = 'This email exists in the system'
+                    injectResponse.innerHTML = exists
+                    injectResponse.classList.remove('borderMeDoesNotExist') //Problem is tht im removing somehting that isnt there but still works.
+                    injectResponse.classList.add('borderMeExists')
+                    return
+
+                } else { //זה בזבוז של הדפסה שלוש פעמים כל פעם בשביל האימיילים שלא מתאימים איך פותרים?????????????????????????????????????
+                    console.log('val in else loop:', val)
+                    let notExists = 'Email is not in the system'
+                    injectResponse.innerHTML = notExists //למה זה מדפיס פעם אחת זה המו ריטרן???
+                    injectResponse.classList.remove('borderMeExists') //Problem is tht im removing somehting that isnt there but still works.
+                    injectResponse.classList.add('borderMeDoesNotExist')
+
+                    //!!!its entering here each time that the first condition doesnt work
+                }
+
+            }
+            // for (let i = 0; i < 4; i++) {
+            //     injectResponse.innerHTML = '222'
+            // }
+
+        }
+    </script>
+
+    <script src="ex6.js"></script>
+</body>
+
+</html>

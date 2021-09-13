@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ex5.css">
+    <title>Ex5</title>
+</head>
+
+<body>
+    <p>Write a program that displays 2 buttons with the writing add and subtract and underneath a div with a starting value of 0. The moment I press add the value will go up by 1 and the moment I will press subtract it will go down by 1</p>
+
+
+    <button type="button" id="btn-add" class="btn" onclick="add()">ADD</button>
+    <button type="button" id="btn-subtract" class="btn" onclick="subtract()">Subtract</button>
+
+    <div id="counter">0</div>
+
+
+
+
+    <script>
+        let count = 0
+
+        function add() {
+            // count++
+            let upDown = document.querySelector('#counter')
+            upDown.innerHTML = ++count
+
+        }
+
+        function subtract() {
+            // count--
+            let upDown = document.querySelector('#counter')
+            upDown.innerHTML = --count
+        }
+    </script>
+
+
+    <!-- <script src="ex5.js"></script> -->
+</body>
+
+</html>
